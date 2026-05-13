@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrewEngine - Cartouche Studio</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/engine.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo-brand">
+                <img src="./logo.png" alt="Cartouche Studio Logo" class="logo-img">
+                <span>Cartouche Studio</span>
+            </a>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="games.html">Jeux</a></li>
+                <li><a href="engine.html">BrewEngine</a></li>
+                <li><a href="devkits.html">DevKits</a></li>
+                <li><a href="about.html">À Propos</a></li>
+                <li><a href="team.html">Équipe</a></li>
+                <li>
+                    <a href="#" class="cart-btn" onclick="toggleCart()">
+                        🛒 Panier
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="engine-hero">
+        <div class="code-bg">
+// BrewEngine Core
+#include &lt;brew/engine.h&gt;
+
+void main() {
+    brew_init();
+    // Your game here
+    brew_run();
+}
+        </div>
+        <div style="max-width: 900px; position: relative; z-index: 1;">
+            <span class="product-badge badge-software badge-free" style="font-size: 1rem; margin-bottom: 1rem;">LOGICIEL LIBRE & GRATUIT</span>
+            <h1 style="font-size: 4rem; margin-bottom: 1rem; background: linear-gradient(135deg, var(--primary), var(--success)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                BrewEngine
+            </h1>
+            <p style="font-size: 1.5rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Le moteur de jeu en logiciel libre pour consoles rétro
+            </p>
+            <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem;">
+                Un seul code. Dix plateformes. Des possibilités infinies.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://github.com" target="_blank" class="btn btn-primary">📥 Télécharger (GitHub)</a>
+                <a href="#documentation" class="btn btn-secondary">📚 Documentation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platforms -->
+    <section style="padding: 5rem 2rem; background: rgba(30, 41, 59, 0.2);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">10 Plateformes Supportées</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem; font-size: 1.2rem;">
+                Développez une fois, déployez partout
+            </p>
+
+            <div class="platform-grid">
+                <div class="platform-badge fade-in">
+                    <div class="icon">🎮</div>
+                    <h4>PlayStation 1</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">PSX</p>
+                </div>
+                <div class="platform-badge fade-in">
+                    <div class="icon">🎮</div>
+                    <h4>PlayStation 2</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">PS2</p>
+                </div>
+                <div class="platform-badge fade-in">
+                    <div class="icon">🎮</div>
+                    <h4>PlayStation 3</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">PS3</p>
+                </div>
+                <div class="platform-badge fade-in">
+                    <div class="icon">📱</div>
+                    <h4>PS Vita</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Portable</p>
+                </div>
+                <div class="platform-badge fade-in">
+                    <div class="icon">🎮</div>
+                    <h4>GameCube</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">NGC</p>
+                </div>
+                <div class="platform-badge fade-in">
+                    <div class="icon">🎮</div>
+                    <h4>Wii</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Motion</p>
+                </div>
+                <div class="platform-badge fade-in">
+                    <div class="icon">🎮</div>
+                    <h4>Wii U</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Dual Screen</p>
+                </div>
+                <div class="platform-badge fade-in">
+                    <div class="icon">📱</div>
+                    <h4>Nintendo 3DS</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Portable 3D</p>
+                </div>
+                <div class="platform-badge fade-in">
+                    <div class="icon">🎮</div>
+                    <h4>Switch</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Hybrid</p>
+                </div>
+                <div class="platform-badge fade-in">
+                    <div class="icon">💻</div>
+                    <h4>PC/Mac</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Pour ceux qui sont team clavier/souris</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section style="padding: 5rem 2rem;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">À Propos de BrewEngine</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-top: 3rem;">
+                <div>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--primary);">Une nouvelle ère du développement homebrew</h3>
+                    <p style="margin-bottom: 1rem; color: var(--text-muted); line-height: 1.8;">
+                        BrewEngine est un moteur de jeu révolutionnaire créé par Cartouche Studio pour démocratiser le développement sur consoles rétro et modernes. Depuis 2020, notre équipe a investi plus de 50 000 heures dans la création d'une infrastructure solide permettant aux développeurs du monde entier de créer des jeux professionnels sans se battre avec les spécificités techniques de chaque plateforme.
+                    </p>
+                    <p style="margin-bottom: 1rem; color: var(--text-muted); line-height: 1.8;">
+                        Basé sur une architecture modulaire éprouvée, BrewEngine abstrait les complexités du développement multi-plateforme et fournit des outils de haut niveau tout en conservant un contrôle bas-niveau pour les cas d'usage avancés.
+                    </p>
+                    <p style="color: var(--text-muted); line-height: 1.8;">
+                        Aujourd'hui, plus de 2000 jeux fonctionnent sur BrewEngine, du port homebrew indie au titre commercial de studio AAA collaborant avec notre équipe.
+                    </p>
+                </div>
+                <div style="background: rgba(99, 102, 241, 0.1); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--primary);">
+                    <h4 style="color: var(--primary); margin-bottom: 1.5rem;">Statistiques clés</h4>
+                    <div style="margin-bottom: 1rem;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span>Stabilité API</span>
+                            <span style="color: var(--success);">99.9%</span>
+                        </div>
+                        <div style="background: rgba(30, 41, 59, 0.5); height: 8px; border-radius: 4px; overflow: hidden;">
+                            <div style="width: 99.9%; height: 100%; background: linear-gradient(90deg, var(--success), var(--primary));"></div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span>Performance</span>
+                            <span style="color: var(--success);">95%</span>
+                        </div>
+                        <div style="background: rgba(30, 41, 59, 0.5); height: 8px; border-radius: 4px; overflow: hidden;">
+                            <div style="width: 95%; height: 100%; background: linear-gradient(90deg, var(--success), var(--primary));"></div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span>Facilité d'utilisation</span>
+                            <span style="color: var(--success);">92%</span>
+                        </div>
+                        <div style="background: rgba(30, 41, 59, 0.5); height: 8px; border-radius: 4px; overflow: hidden;">
+                            <div style="width: 92%; height: 100%; background: linear-gradient(90deg, var(--success), var(--primary));"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section style="padding: 5rem 2rem; background: rgba(30, 41, 59, 0.1);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Fonctionnalités avancées</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div class="product-card fade-in">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">⚡</div>
+                    <h3>Performance optimale</h3>
+                    <p>Conçu pour tirer le maximum de chaque plateforme, même avec des ressources limitées.</p>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🔧</div>
+                    <h3>API unifiée</h3>
+                    <p>Une seule API pour toutes les plateformes. Concentrez-vous sur votre jeu, pas sur les spécificités matérielles.</p>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📦</div>
+                    <h3>Build système intégré</h3>
+                    <p>Compilez pour toutes les plateformes en une seule commande. CI/CD ready.</p>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🎨</div>
+                    <h3>Rendu 2D/3D</h3>
+                    <p>Moteur graphique moderne avec support sprites, tiles, et modèles 3D low-poly.</p>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🔊</div>
+                    <h3>Audio multi-canal</h3>
+                    <p>Système audio complet avec support des formats classiques et modernes.</p>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🕹️</div>
+                    <h3>Input abstraction</h3>
+                    <p>Gestion automatique des contrôleurs spécifiques à chaque plateforme.</p>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">💾</div>
+                    <h3>Save system</h3>
+                    <p>API de sauvegarde uniforme compatible avec les systèmes natifs de chaque console.</p>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🌐</div>
+                    <h3>Networking (beta)</h3>
+                    <p>Support du multijoueur local et en ligne pour les plateformes compatibles.</p>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📖</div>
+                    <h3>Documentation complète</h3>
+                    <p>Tutoriels, exemples, et API reference pour démarrer rapidement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Example -->
+    <section id="documentation" style="padding: 5rem 2rem; background: rgba(30, 41, 59, 0.2);">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2 class="section-title">Simple et Puissant</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem; font-size: 1.2rem;">
+                Créez votre premier jeu en quelques lignes
+            </p>
+
+            <div class="code-example fade-in">
+<code><span class="comment">// main.c - Votre premier jeu BrewEngine</span>
+<span class="keyword">#include</span> <span class="string">&lt;brew/engine.h&gt;</span>
+
+<span class="keyword">typedef struct</span> {
+    <span class="keyword">float</span> x, y;
+    <span class="keyword">float</span> vx, vy;
+} Player;
+
+<span class="keyword">void</span> <span class="function">game_init</span>() {
+    Player* player = brew_malloc(<span class="keyword">sizeof</span>(Player));
+    player-&gt;x = <span class="number">160</span>;
+    player-&gt;y = <span class="number">120</span>;
+    brew_set_userdata(player);
+}
+
+<span class="keyword">void</span> <span class="function">game_update</span>(<span class="keyword">float</span> delta) {
+    Player* player = brew_get_userdata();
+    
+    <span class="keyword">if</span> (brew_input_pressed(BREW_KEY_LEFT))
+        player-&gt;vx = -<span class="number">100</span>;
+    <span class="keyword">else if</span> (brew_input_pressed(BREW_KEY_RIGHT))
+        player-&gt;vx = <span class="number">100</span>;
+    <span class="keyword">else</span>
+        player-&gt;vx = <span class="number">0</span>;
+    
+    player-&gt;x += player-&gt;vx * delta;
+}
+
+<span class="keyword">void</span> <span class="function">game_draw</span>() {
+    Player* player = brew_get_userdata();
+    
+    brew_clear(<span class="string">0x000000</span>);
+    brew_draw_sprite(<span class="string">&quot;player.png&quot;</span>, player-&gt;x, player-&gt;y);
+}
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    brew_init(<span class="string">&quot;My First Game&quot;</span>, <span class="number">320</span>, <span class="number">240</span>);
+    brew_set_callbacks(game_init, game_update, game_draw);
+    <span class="keyword">return</span> brew_run();
+}
+</code>
+            </div>
+
+            <p style="text-align: center; color: var(--text-muted); margin-top: 2rem;">
+                Compilez ce code pour <strong>n'importe quelle plateforme supportée</strong> sans modification !
+            </p>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section style="padding: 5rem 2rem;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Architecture & Modularité</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem; font-size: 1.1rem;">
+                Une structure d'engine conçue pour la flexibilité et la performance
+            </p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem;">
+                <div>
+                    <h4 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 1.3rem;">🏗️ Core Layer</h4>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        La couche fondamentale contient les systèmes critiques : gestion mémoire optimisée pour les consoles embarquées, abstraction du rendu graphique compatible avec OpenGL ES 2.0, EGL, et API propriétaires de chaque plateforme.
+                    </p>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        Tous les allocateurs sont configurable en runtime, permettant des profils mémoire adaptés à chaque console.
+                    </p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 1.3rem;">⚙️ Game Layer</h4>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        La couche jeu expose une API haut-niveau : système d'entités avec composants, gestionnaire d'états de jeu, gestionnaire de ressources avec hot-reloading en dev.
+                    </p>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        Parfait pour les prototypes rapides tout en autorisant l'accès aux couches basses pour les optimisations critiques.
+                    </p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 1.3rem;">📦 Couche plateforme</h4>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        Les adaptateurs spécifiques à chaque plateforme : PS1 via PSyQ SDK, PS3 via Cell SDK, Switch via NDK, etc. Chaque port inclut les optimisations natives recommandées.
+                    </p>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        Automatisé et testé continuellement avec CI/CD à chaque commit.
+                    </p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 1.3rem;">🔧 Tools & Utils</h4>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        Suite complète d'outils : convertisseurs d'assets, profilers mémoire et performance, systèmes de scripting Lua optionnels, frameworks de networking.
+                    </p>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        Tous les outils sont disponibles en CLI et intégrés dans VS Code via notre extension.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Section -->
+    <section style="padding: 5rem 2rem; background: rgba(30, 41, 59, 0.1);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Performance & Optimisation</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem;">
+                <div class="product-card fade-in">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.2rem;">🚀 Benchmarks Réels</h4>
+                    <div style="background: rgba(15, 23, 42, 0.5); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <div style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-size: 0.9rem;">PS1 - Sprite drawing</span>
+                                <span style="color: var(--success); font-weight: bold;">2000 sprites/frame</span>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-size: 0.9rem;">PS2 - Polygones 3D</span>
+                                <span style="color: var(--success); font-weight: bold;">800k poly/frame</span>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-size: 0.9rem;">Switch - Physics</span>
+                                <span style="color: var(--success); font-weight: bold;">200 bodies 60fps</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        Résultats provenant de démonstrations incluses dans le SDK
+                    </p>
+                </div>
+                <div class="product-card fade-in">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.2rem;">⚡ Techniques utilisées</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1rem; display: flex; gap: 0.5rem;">
+                            <span style="color: var(--success);">✓</span>
+                            <span><strong>SIMD intrinsics</strong> - Auto-vectorization où applicable</span>
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; gap: 0.5rem;">
+                            <span style="color: var(--success);">✓</span>
+                            <span><strong>Cache-friendly</strong> - Data-oriented design patterns</span>
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; gap: 0.5rem;">
+                            <span style="color: var(--success);">✓</span>
+                            <span><strong>Memory pooling</strong> - Zero-allocation game loop</span>
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; gap: 0.5rem;">
+                            <span style="color: var(--success);">✓</span>
+                            <span><strong>Multithreading</strong> - Job system pour PS3/PS5</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Licensing -->
+    <section style="padding: 5rem 2rem;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h2 class="section-title">Comparaison avec autres moteurs</h2>
+            
+            <div class="feature-comparison fade-in">
+                <div class="comparison-row header">
+                    <div><strong>Caractéristique</strong></div>
+                    <div style="text-align: center;"><strong>BrewEngine</strong></div>
+                    <div style="text-align: center;"><strong>Alternatives</strong></div>
+                </div>
+                <div class="comparison-row">
+                    <div>Support multi-plateforme rétro</div>
+                    <div style="text-align: center;" class="check">✓</div>
+                    <div style="text-align: center;">✗</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Logiciel libre complet</div>
+                    <div style="text-align: center;" class="check">✓</div>
+                    <div style="text-align: center;">Partiel</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Zero coût pour développement</div>
+                    <div style="text-align: center;" class="check">✓</div>
+                    <div style="text-align: center;">Gratuit</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Optimisé pour consoles limitées</div>
+                    <div style="text-align: center;" class="check">✓</div>
+                    <div style="text-align: center;">✗</div>
+                </div>
+                <div class="comparison-row">
+                    <div>API simple et cohérente</div>
+                    <div style="text-align: center;" class="check">✓</div>
+                    <div style="text-align: center;">Variable</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Communauté homebrew active</div>
+                    <div style="text-align: center;" class="check">✓</div>
+                    <div style="text-align: center;">Petite</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Support professionnel disponible</div>
+                    <div style="text-align: center;" class="check">✓</div>
+                    <div style="text-align: center;">Payant</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section style="padding: 5rem 2rem; background: rgba(30, 41, 59, 0.1);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Cas d'usage réels</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div class="product-card fade-in">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;">🎮 Jeux commerciaux</h4>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        Plus de 50 titres commerciaux lancés, des indie studios aux collaborations AAA. Certains ont généré plus de 1M$ de revenus.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        Ex: "Retro Racing" sur PS1, "Craft Kingdom" sur Switch
+                    </p>
+                </div>
+
+                <div class="product-card fade-in">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;">🏫 Éducation</h4>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        Utilisé dans 20+ établissements d'enseignement pour l'apprentissage du développement de jeux multi-plateforme.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        Documenté avec exemples progressifs de 0 à avancé
+                    </p>
+                </div>
+
+                <div class="product-card fade-in">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;">🔬 Recherche</h4>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        Utilisé par des universités pour la recherche en IA, rendu graphique et optimisation bas-niveau.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        Architecture ouverte pour expérimentations
+                    </p>
+                </div>
+
+                <div class="product-card fade-in">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;">📺 Emulation & Preservation</h4>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        Utilisé pour créer des titres de remplacement ou des mises à jour pour consoles rétro dans des contextes muséaux.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        Parfait pour la préservation numérique
+                    </p>
+                </div>
+
+                <div class="product-card fade-in">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;">🔧 Prototypage rapide</h4>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        Nombreuses gamejams gagnées grâce aux outils rapides de BrewEngine. Développement 5x plus rapide que SDK natifs.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        Participe régulièrement à des compétitions
+                    </p>
+                </div>
+
+                <div class="product-card fade-in">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;">🎓 Bootcamps & Studios</h4>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        Studios de développement complet utilisant BrewEngine comme infrastructure principale pour 10+ projets simultanés.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        Scalabilité proven jusqu'à 50 développeurs
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section style="padding: 5rem 2rem;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Premiers pas</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem; font-size: 1.1rem;">
+                Commencer avec BrewEngine prend moins de 5 minutes
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div style="background: rgba(99, 102, 241, 0.1); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--primary);">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">1️⃣</div>
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;">Installez les outils</h4>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.95rem;">
+                        <code style="background: rgba(0,0,0,0.3); padding: 0.25rem 0.5rem; border-radius: 4px;">brew-cli install</code>
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        Disponible sur Windows, macOS et Linux
+                    </p>
+                </div>
+                
+                <div style="background: rgba(99, 102, 241, 0.1); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--primary);">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">2️⃣</div>
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;">Créez un projet</h4>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.95rem;">
+                        <code style="background: rgba(0,0,0,0.3); padding: 0.25rem 0.5rem; border-radius: 4px;">brew new my_game</code>
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        Structure complète avec exemples
+                    </p>
+                </div>
+                
+                <div style="background: rgba(99, 102, 241, 0.1); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--primary);">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">3️⃣</div>
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;">Compilez partout</h4>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.95rem;">
+                        <code style="background: rgba(0,0,0,0.3); padding: 0.25rem 0.5rem; border-radius: 4px;">brew build --all</code>
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        Une seule command pour 10 plateformes
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Licensing -->
+    <section style="padding: 5rem 2rem;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h2 class="section-title">Licensing</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="product-card fade-in" style="border: 2px solid var(--success);">
+                    <span class="product-badge badge-free">GRATUIT</span>
+                    <h3 style="margin-top: 1rem;">Logiciel libre</h3>
+                    <div class="product-price">0$</div>
+                    <p style="min-height: auto;">Pour les projets personnels et commerciaux générant moins de 50k$/an</p>
+                    <ul style="text-align: left; margin: 1.5rem 0; list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;">✓ Accès au code source complet</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Toutes les plateformes</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Support communautaire</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Mises à jour gratuites</li>
+                    </ul>
+                    <a href="https://github.com" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center;">Télécharger</a>
+                </div>
+
+                <div class="product-card fade-in" style="border: 2px solid var(--primary);">
+                    <span class="product-badge badge-software">ENTREPRISE</span>
+                    <h3 style="margin-top: 1rem;">Commercial License</h3>
+                    <div class="product-price">299$/an</div>
+                    <p style="min-height: auto;">Par siège, pour les revenus >50k$/an avec des jeux BrewEngine</p>
+                    <ul style="text-align: left; margin: 1.5rem 0; list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;">✓ Tout de la version gratuite</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Support prioritaire</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Builds personnalisés</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Consulting technique</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="alert('Contactez-nous à enterprise@cartouche-studio.com')">Nous contacter</button>
+                </div>
+            </div>
+
+            <p style="text-align: center; color: var(--text-muted); margin-top: 3rem; font-size: 0.95rem;">
+                💡 Pas sûr de quelle licence choisir ? La version gratuite convient à 95% des développeurs homebrew.
+            </p>
+        </div>
+    </section>
+    <!-- FAQ Section -->
+    <section style="padding: 5rem 2rem; background: rgba(30, 41, 59, 0.1);">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h2 class="section-title">Questions Fréquentes</h2>
+            
+            <div style="margin-top: 3rem;">
+                <div style="background: rgba(99, 102, 241, 0.1); padding: 2rem; border-radius: 12px; margin-bottom: 1.5rem; border-left: 4px solid var(--primary);">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;">Faut-il payer pour utiliser BrewEngine ?</h4>
+                    <p style="color: var(--text-muted);">Non. BrewEngine est 100% gratuit pour les projets personnels et les projets commerciaux générant moins de 50k$/an. Une licence commercial optionnelle existe pour les studios plus grands.</p>
+                </div>
+
+                <div style="background: rgba(99, 102, 241, 0.1); padding: 2rem; border-radius: 12px; margin-bottom: 1.5rem; border-left: 4px solid var(--primary);">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;">Est-ce vraiment du code source ouvert ?</h4>
+                    <p style="color: var(--text-muted);">Oui, 100% sous licence MIT. Vous pouvez modifier, redistribuer, et utiliser commercialement le code. Pas de restrictions d'utilisation ni de viruses GPL.</p>
+                </div>
+
+                <div style="background: rgba(99, 102, 241, 0.1); padding: 2rem; border-radius: 12px; margin-bottom: 1.5rem; border-left: 4px solid var(--primary);">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;">Puis-je migrer depuis un autre moteur ?</h4>
+                    <p style="color: var(--text-muted);">Oui, BrewEngine propose des bindings pour Lua et a une API suffisamment bas-niveau pour être compatible avec les ports existants. Nous avons une équipe pour les migrations complexes (payant).</p>
+                </div>
+
+                <div style="background: rgba(99, 102, 241, 0.1); padding: 2rem; border-radius: 12px; margin-bottom: 1.5rem; border-left: 4px solid var(--primary);">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;">Quelle est la courbe d'apprentissage ?</h4>
+                    <p style="color: var(--text-muted);">Pour les débutants : 1-2 semaines pour comprendre les bases. Pour les développeurs expérimentés : 2-3 jours. Nous fournissons 50+ tutoriels et 100+ examples de code.</p>
+                </div>
+
+                <div style="background: rgba(99, 102, 241, 0.1); padding: 2rem; border-radius: 12px; margin-bottom: 1.5rem; border-left: 4px solid var(--primary);">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;">Y a-t-il une communauté active ?</h4>
+                    <p style="color: var(--text-muted);">Oui ! 5000+ développeurs actifs sur Discord, forums, et GitHub. Nous organisons des game jams mensuelles et des sessions de live-coding. Support communautaire rapide sur les problèmes courants.</p>
+                </div>
+
+                <div style="background: rgba(99, 102, 241, 0.1); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--primary);">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;">Pouvez-vous m'aider pour un projet commercial ?</h4>
+                    <p style="color: var(--text-muted);">Absolument. Nous offrons du support prioritaire, du consulting technique, et des builds personnalisés pour les clients enterprise. Contactez enterprise@cartouche-studio.com pour discuter de vos besoins.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section style="padding: 5rem 2rem;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Intégrations & Écosystème</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div style="background: rgba(30, 41, 59, 0.6); padding: 2rem; border-radius: 12px; text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔌</div>
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">VS Code Extension</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Debugger intégré, templates, et build automation</p>
+                </div>
+
+                <div style="background: rgba(30, 41, 59, 0.6); padding: 2rem; border-radius: 12px; text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📦</div>
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Asset Store</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Sprites, tilesets, musiques et plugins</p>
+                </div>
+
+                <div style="background: rgba(30, 41, 59, 0.6); padding: 2rem; border-radius: 12px; text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">💬</div>
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Discord Community</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">5000+ membres, support 24/7</p>
+                </div>
+
+                <div style="background: rgba(30, 41, 59, 0.6); padding: 2rem; border-radius: 12px; text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📚</div>
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Learning Hub</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">100+ vidéos et tutoriels interactifs</p>
+                </div>
+
+                <div style="background: rgba(30, 41, 59, 0.6); padding: 2rem; border-radius: 12px; text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎮</div>
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Game Portal</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Showcase et distribution pour vos jeux</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Community Stats -->
+    <section style="padding: 5rem 2rem; background: rgba(30, 41, 59, 0.2);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Rejoignez la communauté</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div style="text-align: center; padding: 2rem;" class="fade-in">
+                    <div style="font-size: 3rem; font-weight: bold; color: var(--primary); margin-bottom: 0.5rem;">5000+</div>
+                    <div style="color: var(--text-muted);">Développeurs actifs</div>
+                </div>
+                <div style="text-align: center; padding: 2rem;" class="fade-in">
+                    <div style="font-size: 3rem; font-weight: bold; color: var(--primary); margin-bottom: 0.5rem;">2000+</div>
+                    <div style="color: var(--text-muted);">Jeux créés</div>
+                </div>
+                <div style="text-align: center; padding: 2rem;" class="fade-in">
+                    <div style="font-size: 3rem; font-weight: bold; color: var(--primary); margin-bottom: 0.5rem;">15K+</div>
+                    <div style="color: var(--text-muted);">Stars GitHub</div>
+                </div>
+                <div style="text-align: center; padding: 2rem;" class="fade-in">
+                    <div style="font-size: 3rem; font-weight: bold; color: var(--primary); margin-bottom: 0.5rem;">500+</div>
+                    <div style="color: var(--text-muted);">Contributeurs</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Cartouche Studio. Des plateformes ouvertes, des esprits ouverts, pas de permission à demander, juste de la passion</p>
+        <p style="margin-top: 1rem;">Fait avec ❤️ pour la communauté homebrew</p>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>🛒 Votre Panier</h2>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">0$</span>
+            </div>
+            <button class="btn btn-primary" style="width: 100%;" onclick="checkout()">Commander</button>
+        </div>
+    </div>
+
+    <script src="./js/cart.js"></script>
+</body>
+</html>

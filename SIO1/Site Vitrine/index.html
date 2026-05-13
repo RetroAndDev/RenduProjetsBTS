@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Cartouche Studio</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo-brand">
+                <img src="./logo.png" alt="Cartouche Studio Logo" class="logo-img">
+                <span>Cartouche Studio</span>
+            </a>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="games.html">Jeux</a></li>
+                <li><a href="engine.html">BrewEngine</a></li>
+                <li><a href="devkits.html">DevKits</a></li>
+                <li><a href="about.html">À Propos</a></li>
+                <li><a href="team.html">Équipe</a></li>
+                <li>
+                    <a href="#" class="cart-btn" onclick="toggleCart()">
+                        🛒 Panier
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <img src="./logo.png" alt="Cartouche Studio Logo" class="hero-logo">
+            <h1>Cartouche Studio</h1>
+            <p class="tagline">Des plateformes ouvertes, des esprits ouverts, pas de permission à demander, juste de la passion</p>
+            <div class="cta-buttons">
+                <a href="games.html" class="btn btn-primary">Découvrir nos jeux</a>
+                <a href="engine.html" class="btn btn-secondary">BrewEngine (Logiciel libre)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section style="padding: 4rem 2rem;">
+        <div class="about-content fade-in">
+            <h2 style="font-size: 2.5rem; margin-bottom: 2rem; text-align: center;">Notre Mission</h2>
+            <p style="font-size: 1.2rem; text-align: center; margin-bottom: 2rem;">
+                Démocratiser le développement de jeux sur consoles rétro en fournissant des outils en logiciel libre,
+                du matériel de qualité et en construisant une communauté passionnée.
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div style="text-align: center; padding: 2rem; background: rgba(99, 102, 241, 0.1); border-radius: 12px;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🎮</div>
+                    <h3 style="margin-bottom: 1rem;">10 plateformes</h3>
+                    <p style="color: var(--text-muted);">De la PS1 à la Switch, nous supportons toutes les consoles rétro que vous aimez</p>
+                </div>
+                
+                <div style="text-align: center; padding: 2rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">💻</div>
+                    <h3 style="margin-bottom: 1rem;">Logiciel libre</h3>
+                    <p style="color: var(--text-muted);">Notre moteur est gratuit et en logiciel libre pour la communauté</p>
+                </div>
+                
+                <div style="text-align: center; padding: 2rem; background: rgba(236, 72, 153, 0.1); border-radius: 12px;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🚀</div>
+                    <h3 style="margin-bottom: 1rem;">5000+ Devs</h3>
+                    <p style="color: var(--text-muted);">Une communauté active et passionnée de développeurs homebrew</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section style="padding: 4rem 2rem; background: rgba(30, 41, 59, 0.3);">
+        <h2 class="section-title">Ce que nous proposons</h2>
+        <div class="products-grid">
+            <div class="product-card fade-in">
+                <span class="product-badge badge-software badge-free">MOTEUR</span>
+                <h3>BrewEngine</h3>
+                <p>Développez des jeux pour 9 consoles rétro différentes avec un seul moteur puissant et facile à utiliser.</p>
+                <a href="engine.html" class="btn btn-primary" style="width: 100%; text-align: center;">En savoir plus</a>
+            </div>
+            
+            <div class="product-card fade-in">
+                <span class="product-badge badge-software">JEU</span>
+                <h3>Limits: Don't Overfl0w</h3>
+                <p>Notre premier jeu commercial : une expérience unique de programmation et de réflexion philosophique.</p>
+                <a href="games.html" class="btn btn-primary" style="width: 100%; text-align: center;">Découvrir</a>
+            </div>
+            
+            <div class="product-card fade-in">
+                <span class="product-badge badge-hardware">MATÉRIEL</span>
+                <h3>DevKits & Accessoires</h3>
+                <p>Consoles modifiées, supports physiques et workstations pour un développement professionnel.</p>
+                <a href="devkits.html" class="btn btn-primary" style="width: 100%; text-align: center;">Explorer</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Cartouche Studio. Open Platforms. Open Minds. No Permissions Needed. Just Passion.</p>
+        <p style="margin-top: 1rem;">Made with ❤️ for the homebrew community</p>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>🛒 Votre Panier</h2>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">0$</span>
+            </div>
+            <button class="btn btn-primary" style="width: 100%;" onclick="checkout()">Commander</button>
+        </div>
+    </div>
+
+    <script src="./js/cart.js"></script>
+</body>
+</html>

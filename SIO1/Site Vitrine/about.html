@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos - Cartouche Studio</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo-brand">
+                <img src="./logo.png" alt="Cartouche Studio Logo" class="logo-img">
+                <span>Cartouche Studio</span>
+            </a>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="games.html">Jeux</a></li>
+                <li><a href="engine.html">BrewEngine</a></li>
+                <li><a href="devkits.html">DevKits</a></li>
+                <li><a href="about.html">À Propos</a></li>
+                <li><a href="team.html">Équipe</a></li>
+                <li>
+                    <a href="#" class="cart-btn" onclick="toggleCart()">
+                        🛒 Panier
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1 class="section-title">Notre Histoire</h1>
+    </div>
+
+    <!-- About Section -->
+    <section>
+        <div class="about-content fade-in">
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                Cartouche Studio est né de la passion pour le retro gaming et l'esprit du logiciel libre. 
+                Nous croyons que la créativité ne devrait jamais être limitée par des barrières artificielles.
+            </p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <h4>Les débuts</h4>
+                    <p>Création du studio par une équipe de développeurs passionnés de homebrew. Première version alpha du BrewEngine pour GameCube.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2021</div>
+                    <h4>Expansion des plateformes</h4>
+                    <p>Support ajouté pour PS2, Wii et Nintendo 3DS. Le BrewEngine devient logiciel libre et la communauté commence à grandir.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2022</div>
+                    <h4>DevKits et hardware</h4>
+                    <p>Lancement de notre gamme de kits de développement modifiés. Plus de 500 développeurs rejoignent la communauté BrewEngine.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <h4>Support next-gen rétro</h4>
+                    <p>Ajout du support pour Switch, PS Vita et Wii U. Début du développement de "Limits: Don't Overfl0w".</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <h4>PlayStation 3 et workstations</h4>
+                    <p>Support PS3 ajouté au BrewEngine. Lancement de la Cartouche Workstation pour les développeurs professionnels.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2025</div>
+                    <h4>L'année de Limits</h4>
+                    <p>Beta publique de "Limits: Don't Overfl0w". Plus de 2000 jeux créés avec le BrewEngine par la communauté.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2026</div>
+                    <h4>Aujourd'hui</h4>
+                    <p>Release officielle de "Limits: Don't Overfl0w". Le BrewEngine supporte désormais 10 plateformes rétro différentes. Notre communauté compte plus de 5000 développeurs actifs.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem; padding: 2rem; background: rgba(99, 102, 241, 0.1); border-left: 4px solid var(--primary); border-radius: 8px;">
+                <h3 style="margin-bottom: 1rem;">Notre Mission</h3>
+                <p>
+                    Démocratiser le développement de jeux sur consoles rétro en fournissant des outils en logiciel libre, 
+                    du matériel de qualité et en construisant une communauté passionnée. Nous croyons que chaque 
+                    développeur devrait avoir accès aux plateformes qu'il aime, sans barrières ni permissions.
+                </p>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 2rem; background: rgba(236, 72, 153, 0.1); border-left: 4px solid var(--accent); border-radius: 8px;">
+                <h3 style="margin-bottom: 1rem;">Nos Valeurs</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;">
+                        <span style="position: absolute; left: 0; color: var(--primary);">✓</span>
+                        <strong>Logiciel libre d'abord</strong> - Le code libre est au cœur de notre philosophie
+                    </li>
+                    <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;">
+                        <span style="position: absolute; left: 0; color: var(--primary);">✓</span>
+                        <strong>Guidés par la communauté</strong> - Notre communauté guide nos décisions
+                    </li>
+                    <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;">
+                        <span style="position: absolute; left: 0; color: var(--primary);">✓</span>
+                        <strong>Matériel de qualité</strong> - Des outils professionnels pour tous
+                    </li>
+                    <li style="padding-left: 2rem; position: relative;">
+                        <span style="position: absolute; left: 0; color: var(--primary);">✓</span>
+                        <strong>Pas d'exclusivité</strong> - Pas de barrières, juste de la passion
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div style="margin-top: 4rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+            <div style="text-align: center; padding: 2rem; background: rgba(30, 41, 59, 0.5); border-radius: 12px;" class="fade-in">
+                <div style="font-size: 3rem; font-weight: bold; color: var(--primary); margin-bottom: 0.5rem;">9</div>
+                <div style="color: var(--text-muted);">Plateformes supportées</div>
+            </div>
+            <div style="text-align: center; padding: 2rem; background: rgba(30, 41, 59, 0.5); border-radius: 12px;" class="fade-in">
+                <div style="font-size: 3rem; font-weight: bold; color: var(--primary); margin-bottom: 0.5rem;">5000+</div>
+                <div style="color: var(--text-muted);">Développeurs actifs</div>
+            </div>
+            <div style="text-align: center; padding: 2rem; background: rgba(30, 41, 59, 0.5); border-radius: 12px;" class="fade-in">
+                <div style="font-size: 3rem; font-weight: bold; color: var(--primary); margin-bottom: 0.5rem;">2000+</div>
+                <div style="color: var(--text-muted);">Jeux créés</div>
+            </div>
+            <div style="text-align: center; padding: 2rem; background: rgba(30, 41, 59, 0.5); border-radius: 12px;" class="fade-in">
+                <div style="font-size: 3rem; font-weight: bold; color: var(--primary); margin-bottom: 0.5rem;">6</div>
+                <div style="color: var(--text-muted);">Années d'expérience</div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div style="margin-top: 4rem;">
+            <h2 class="section-title">Nous contacter</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">
+                Un petit mot, une question ou une idée ? Ce formulaire est fictif, mais il fait bonne impression.
+            </p>
+            <form style="max-width: 720px; margin: 0 auto; padding: 2rem; background: rgba(30, 41, 59, 0.5); border-radius: 12px;" class="fade-in">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <label for="contactName" style="display: block; margin-bottom: 0.5rem;">Nom</label>
+                        <input id="contactName" type="text" placeholder="Votre nom" style="width: 100%; padding: 0.9rem 1rem; border-radius: 8px; border: 1px solid rgba(148, 163, 184, 0.2); background: rgba(15, 23, 42, 0.6); color: var(--text);">
+                    </div>
+                    <div>
+                        <label for="contactEmail" style="display: block; margin-bottom: 0.5rem;">Email</label>
+                        <input id="contactEmail" type="email" placeholder="vous@email.com" style="width: 100%; padding: 0.9rem 1rem; border-radius: 8px; border: 1px solid rgba(148, 163, 184, 0.2); background: rgba(15, 23, 42, 0.6); color: var(--text);">
+                    </div>
+                </div>
+                <div style="margin-top: 1.5rem;">
+                    <label for="contactSubject" style="display: block; margin-bottom: 0.5rem;">Sujet</label>
+                    <input id="contactSubject" type="text" placeholder="Partenariat, support, question..." style="width: 100%; padding: 0.9rem 1rem; border-radius: 8px; border: 1px solid rgba(148, 163, 184, 0.2); background: rgba(15, 23, 42, 0.6); color: var(--text);">
+                </div>
+                <div style="margin-top: 1.5rem;">
+                    <label for="contactMessage" style="display: block; margin-bottom: 0.5rem;">Message</label>
+                    <textarea id="contactMessage" rows="5" placeholder="Écrivez votre message ici..." style="width: 100%; padding: 0.9rem 1rem; border-radius: 8px; border: 1px solid rgba(148, 163, 184, 0.2); background: rgba(15, 23, 42, 0.6); color: var(--text); resize: vertical;"></textarea>
+                </div>
+                <div style="margin-top: 1.75rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                    <button type="button" class="btn btn-primary">Envoyer</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Cartouche Studio. Des plateformes ouvertes, des esprits ouverts, pas de permission à demander, juste de la passion</p>
+        <p style="margin-top: 1rem;">Fait avec ❤️ pour la communauté homebrew</p>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>🛒 Votre Panier</h2>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">0$</span>
+            </div>
+            <button class="btn btn-primary" style="width: 100%;" onclick="checkout()">Commander</button>
+        </div>
+    </div>
+
+    <script src="./js/cart.js"></script>
+</body>
+</html>
